@@ -35,4 +35,4 @@ sudo apt update && sudo apt install espeak ffmpeg libespeak1
 ```
 
 ## Configuration
-The server URL for the IP Webcam server, and the webcam id must be specified in the [config.ini](config.ini) file before running the program. If you do not intend to use IP Webcam, then leave the `ip_port` field to its default value. Do not remove the field though. The program will automatically try use the webcam if it notices that the server URL is incorrect or if the URL is not reachable.
+The server URL for the IP Webcam server, and the webcam id must be specified in the [config.ini](config.ini) file before running the program. If you do not intend to use IP Webcam, then you can ignore the `ip_port` field. Do not remove the field though. The program will automatically try to use the webcam if it notices that the server URL is incorrect, missing, or if the URL is not reachable.
