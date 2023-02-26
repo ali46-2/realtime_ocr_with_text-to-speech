@@ -85,7 +85,12 @@ class CameraClass():
 
         while bool(self.run.value):
             if camera.isOpened():
-                frame[:] = camera.read()[1][:]
+                ret, frame_read = camera.read()
+                if not ret:
+                    self.run.value = 0
+                    break
+                
+                frame[:] = frame_read[:]
                 if create_process:
                     Process(target=self.display).start()
                     create_process = False
@@ -169,6 +174,6 @@ if __name__ == '__main__':
         print('Error connecting to server. Make sure the server is online, and the server address is correct. Defaulting to web cam.')
         id = webcam_id
 
-    # camera = CameraClass(camera_id=id, seconds_between_ocr=3, display_regular_video=False, display_processed_video=True, perform_tts=True)
+    # camera = CameraClass(camera_id=id, seconds_between_ocr=3, display_regular_video=True, display_processed_video=True, perform_tts=True)
     camera = CameraClass(camera_id=id)
     camera.start()
