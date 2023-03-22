@@ -1,5 +1,5 @@
-## Realtime OCR with TTS
-A Python program that captures video from a camera, and performs realtime TTS (Text to Speech) on any text found in the video. Works on Windows, Linux, and macOS.
+## Realtime OCR with Text-to-Speech
+A Python program that captures video from a camera, and performs realtime text-to-speech on any text found in the video. Works on Windows, Linux, and macOS.
 
 ## Features
 ### Multiprocessing
@@ -7,7 +7,7 @@ This program uses multiprocessing to improve performance by allocating a separat
   * Capture video from the camera.
   * Preprocess the latest frame from the camera.
   * Perform OCR (Optical Character Regonition) every N seconds on the latest preprocessed frame.
-  * Perform TTS if any text is found from the OCR process.
+  * Perform text-to-speech if any text is found from the OCR process.
   
 ### Preprocessing
 The preprocessing steps include:
@@ -27,6 +27,8 @@ The program supports two sources for the video:
   
 ## Requirements
 This program was tested on Python 3.9. All external packages used in this program are listed in the [requirements.txt](requirements.txt) file.
+
+You also need to install [Google Tesseract OCR](https://github.com/tesseract-ocr/tesseract) to use the pytesseract package.
 
 ### Additional Requirements for Linux
 If you are on a linux system and if the voice output is not working, then install espeak, ffmpeg and libespeak1 as shown below:
